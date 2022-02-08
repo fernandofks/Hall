@@ -67,8 +67,10 @@ namespace Valve.VR
                 transform.rotation = origin.rotation * pose.rot;
             }
             else
-            {
-                transform.localPosition = pose.pos;
+            {   
+                print("posicao pe" + pose.pos);
+                print("rotacao pe" + pose.rot);
+                transform.localPosition = pose.pos*3;
                 transform.localRotation = pose.rot;
             }
         }

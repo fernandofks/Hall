@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.hall.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\fernandoks\\Desktop\\Hall\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\glados\\Desktop\\Hall\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Hall [Testing]"
