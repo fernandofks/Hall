@@ -70,7 +70,7 @@ namespace Valve.VR
             {   
                 print("posicao pe" + pose.pos);
                 print("rotacao pe" + pose.rot);
-                transform.localPosition = pose.pos*3;
+                transform.localPosition = pose.pos;
                 transform.localRotation = pose.rot;
             }
         }
