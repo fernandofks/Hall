@@ -120,9 +120,6 @@ public class KATDevice : MonoBehaviour {
 
     void TargetTransform(MovementStyleList Type)
     {
-        print("direcao: " + KATDevice_Walk.Instance.data_moveDirection);
-        print("Speed: " + KATDevice_Walk.Instance.data_moveSpeed);
-        print("foward: " + targetRotateObject.forward);
         //vrCameraRig.position = targetRotateObject.position;
         if (KATDevice_Walk.Instance.data_moveDirection > 0) KATDevice_Walk.Instance.data_moveSpeed *= multiply;
         else if (KATDevice_Walk.Instance.data_moveDirection < 0) KATDevice_Walk.Instance.data_moveSpeed *= multiplyBack;
