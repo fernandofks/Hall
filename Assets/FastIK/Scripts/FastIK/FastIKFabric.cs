@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
@@ -243,8 +243,7 @@ namespace DitzelGames.FastIK
                 Handles.DrawWireCube(Vector3.up * 0.5f, Vector3.one);
                 current = current.parent;
             }
-        }
 #endif
 
     }
-}
+}}
