@@ -43,7 +43,7 @@ public class MyBehaviour : MonoBehaviour
 
             uri += envio;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.015f);
 
             using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))    
             {
@@ -74,7 +74,7 @@ public class MyBehaviour : MonoBehaviour
 
 
                         //Mudando posição
-                        transform.position += Vector3.forward * 1.0f * pos;
+                        transform.position += Vector3.forward * 0.2f * pos;
 
 
                 //         break;

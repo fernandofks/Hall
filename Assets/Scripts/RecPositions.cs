@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class RecPositions : MonoBehaviour {
      public string fileName = "positions.txt"; // file pathname
      public float interval = 0.1f; // save positions each 0.1 second
-     public float tSample = 0; // sampling starts after this time
+     public float tSample = 360; // sampling starts after this time
      private List<Vector3> positions;
      private List<Vector3> rotations;
      private List<Vector3> rpositions;
