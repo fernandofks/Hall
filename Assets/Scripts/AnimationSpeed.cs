@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnimationSpeed : MonoBehaviour
-{
-    GameObject CubeStop;
-    Animation anim;
+{   
+    public Text placa;
+    private int waitTime=30;
+    private float stop_speed=0;
+    private float slow_speed=0.02f;
+    private float fast_speed=0.04f;
+    Animator anim;
     void Start()
     {
-        CubeStop = GameObject.Find("CubeStop");
-        anim = CubeStop.GetComponent<Animation>();
-        StartCoroutine(SelfDestruct());
+        anim = GetComponent<Animator>();
+        StartCoroutine(ChangeSpeed());
     }
 
     // Update is called once per frame
@@ -18,10 +22,51 @@ public class AnimationSpeed : MonoBehaviour
     {
         
     }
-    IEnumerator SelfDestruct()
+    IEnumerator ChangeSpeed()
     {
+            placa.text="Se prepare";
+     placa.color= Color.blue;
+          yield return new WaitForSeconds(60);
 
-     anim.SetFloat("speedMultiplier", 0);
+    //parado
+     anim.SetFloat("speedMultiplier", stop_speed);
+     placa.text="parado";
+     placa.color= Color.red;
+    //devagar
+     yield return new WaitForSeconds(waitTime);
+     anim.SetFloat("speedMultiplier", slow_speed);
+     placa.text="devagar";
+     placa.color= Color.yellow;
+    //rapido
+     yield return new WaitForSeconds(waitTime);
+     anim.SetFloat("speedMultiplier", fast_speed);
+     placa.text="rapido";
+     placa.color=Color.green;
+    //devagar
+     yield return new WaitForSeconds(waitTime);
+     anim.SetFloat("speedMultiplier", slow_speed);
+     placa.text="devagar";
+     placa.color= Color.yellow;
+    //parado
+     yield return new WaitForSeconds(waitTime);
+     anim.SetFloat("speedMultiplier", stop_speed);
+     placa.text="parado";
+     placa.color= Color.red;
+    //rapido
+     yield return new WaitForSeconds(waitTime);
+     anim.SetFloat("speedMultiplier", fast_speed);
+     placa.text="rapido";
+     placa.color=Color.green;
+    //parado
+     yield return new WaitForSeconds(waitTime);
+
+     anim.SetFloat("speedMultiplier", stop_speed);
+     placa.text="parado";
+     placa.color= Color.red;
+     yield return new WaitForSeconds(waitTime);
+
+    placa.text="ACABOU";
+     placa.color= Color.blue;
 
     }
 }

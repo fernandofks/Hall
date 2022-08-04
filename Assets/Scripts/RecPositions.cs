@@ -3,9 +3,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class RecPositions : MonoBehaviour {
-     public string fileName = "positions_camera.txt"; // file pathname
+     public string fileName = "walk_data_3_Daniel.txt"; // file pathname
      public float interval = 0.1f; // save positions each 0.1 second
-     public float tSample = 0.0f; // sampling starts after this time
+     public float tSample = 60; // sampling starts after this time
      private List<Vector3> positions;
      private List<Vector3> rotations;
      private List<Vector3> rpositions;
