@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class RecPositions : MonoBehaviour {
-     public string fileName = "walk_data_3_Daniel.txt"; // file pathname
+     public string fileName = "walk_data_5_Daniel.txt"; // file pathname
      public float interval = 0.1f; // save positions each 0.1 second
      public float tSample = 60; // sampling starts after this time
      private List<Vector3> positions;
@@ -27,10 +27,8 @@ public class RecPositions : MonoBehaviour {
          rrotations = new List<Vector3>();
          cpositions = new List<Vector3>(); // initialize the array...
          crotations = new List<Vector3>();
-         print("teste");
          // and start recording after tSample:
          InvokeRepeating("RecPoint", tSample, interval);
-         print("Testando");
      }
      void RecPoint(){
          positions.Add(MLeftFoot.transform.position);
