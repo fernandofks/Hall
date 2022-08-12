@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class RecPositions : MonoBehaviour {
-     public string fileName = "walk_data_10_Fernando.txt"; // file pathname
+     public string fileName = "walk_data_11_Daniel.txt"; // file pathname
      public float interval = 0.1f; // save positions each 0.1 second
      public float tSample = 60; // sampling starts after this time
      private List<Vector3> positions;

@@ -28,31 +28,32 @@ public class MyBehaviour : MonoBehaviour
     {
         
         while(true)
-        {
-
+        {   float startTime = 0.0f;
+            startTime = Time.time;
+ 
             string uri = "http://127.0.0.1:8000/";
             float fx = foot.position.x;
             float fy = foot.position.y;
-            float fz = foot.position.z;
+            float fz = foot.transform.localPosition.z;
             float frx= foot.rotation.x;
             float fry= foot.rotation.y;
             float frz= foot.rotation.z;
             float frw = foot.rotation.w;
             float rfx = rfoot.position.x;
             float rfy = rfoot.position.y;
-            float rfz = rfoot.position.z;
+            float rfz = rfoot.transform.localPosition.z;
             float rfrx= rfoot.rotation.x;
             float rfry= rfoot.rotation.y;
             float rfrz= rfoot.rotation.z;
             float rfrw= rfoot.rotation.w;
             
-            string envio = System.String.Format("[{0},{1},{2},{3},{4},{5},{6},{7}]", frx, fry, frz,frw, rfrx, rfry, rfrz, rfrw);  
+            string envio = System.String.Format("[{0},{1},{2},{3},{4},{5}]", fx, fy, fz, rfx, rfy, rfz);  
             
             //uri += "[0.08,%200.14,%200.09,%200.18]";
 
             uri += envio;
-
-            yield return new WaitForSeconds(0.05f);
+            
+            yield return new WaitForSeconds(0.03f);
 
             using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))    
             {
@@ -83,12 +84,17 @@ public class MyBehaviour : MonoBehaviour
 
                         //Mudando posição
                         transform.position += Vector3.forward * 0.2f * pos;
+                        print(Time.time - startTime);
+                        while((Time.time - startTime)<0.1){
+                            yield return new WaitForSeconds(0.001f);
+                        }
 
 
                 //         break;
                 // }
                 
             }
+             
         }
     }
 }
