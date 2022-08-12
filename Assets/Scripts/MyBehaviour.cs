@@ -38,6 +38,7 @@ public class MyBehaviour : MonoBehaviour
             float fry= foot.rotation.y;
             float frz= foot.rotation.z;
             float frw = foot.rotation.w;
+            float rfx = rfoot.position.x;
             float rfy = rfoot.position.y;
             float rfz = rfoot.position.z;
             float rfrx= rfoot.rotation.x;
@@ -45,13 +46,13 @@ public class MyBehaviour : MonoBehaviour
             float rfrz= rfoot.rotation.z;
             float rfrw= rfoot.rotation.w;
             
-            string envio = System.String.Format("[{0},{1},{2},{3},{4},{5},{6},{7}]", frx, fry, frz, frw, rfrx, rfry, rfrz, rfrw);  
+            string envio = System.String.Format("[{0},{1},{2},{3},{4},{5},{6},{7}]", frx, fry, frz,frw, rfrx, rfry, rfrz, rfrw);  
             
             //uri += "[0.08,%200.14,%200.09,%200.18]";
 
             uri += envio;
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
 
             using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))    
             {
