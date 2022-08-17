@@ -84,7 +84,7 @@ public class MyBehaviour : MonoBehaviour
 
                         //Mudando posição
                         transform.position += Vector3.forward * 0.2f * pos;
-                        print(Time.time - startTime);
+                        //print(Time.time - startTime);
                         while((Time.time - startTime)<0.1){
                             yield return new WaitForSeconds(0.001f);
                         }
