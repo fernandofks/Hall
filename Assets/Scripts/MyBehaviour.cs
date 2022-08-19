@@ -88,6 +88,7 @@ public class MyBehaviour : MonoBehaviour
                         while((Time.time - startTime)<0.1){
                             yield return new WaitForSeconds(0.001f);
                         }
+                        print(Time.time-startTime);
 
 
                 //         break;
