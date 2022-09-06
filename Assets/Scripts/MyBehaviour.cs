@@ -83,6 +83,8 @@ public class MyBehaviour : MonoBehaviour
 
 
                         //Mudando posição
+                        //Quaternion moveAng = foot.transform.eulerAngles - rfoot.transform.eulerAngles;
+                        //transform.position += moveAng*Vector3.forward*pos;
                         transform.position += Vector3.forward * 0.2f * pos;
                         //print(Time.time - startTime);
                         while((Time.time - startTime)<0.1){
