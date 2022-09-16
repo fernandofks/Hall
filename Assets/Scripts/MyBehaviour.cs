@@ -17,7 +17,8 @@ public class MyBehaviour : MonoBehaviour
 
     public Transform foot;
     public Transform rfoot;
- 
+    static float angulo_y;
+
     void Start()
     {
         // My example.
@@ -39,6 +40,9 @@ public class MyBehaviour : MonoBehaviour
             float fry= foot.rotation.y;
             float frz= foot.rotation.z;
             float frw = foot.rotation.w;
+            float frEulerx = foot.rotation.eulerAngles.x;
+            float frEulery = foot.rotation.eulerAngles.y;
+            float frEulerz = foot.rotation.eulerAngles.z;
             float rfx = rfoot.position.x;
             float rfy = rfoot.position.y;
             float rfz = rfoot.transform.localPosition.z;
@@ -46,9 +50,10 @@ public class MyBehaviour : MonoBehaviour
             float rfry= rfoot.rotation.y;
             float rfrz= rfoot.rotation.z;
             float rfrw= rfoot.rotation.w;
-            
+            float rfrEulerx = rfoot.rotation.eulerAngles.x;
+            float rfrEulery = rfoot.rotation.eulerAngles.y;
+            float rfrEulerz = rfoot.rotation.eulerAngles.z;            
             string envio = System.String.Format("[{0},{1},{2},{3},{4},{5}]", fx, fy, fz, rfx, rfy, rfz);  
-            
             //uri += "[0.08,%200.14,%200.09,%200.18]";
 
             uri += envio;
@@ -76,21 +81,43 @@ public class MyBehaviour : MonoBehaviour
                 //     case UnityWebRequest.Result.Success:
                 //         // Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
 
-                        JSONNode coordinates = JSON.Parse(webRequest.downloadHandler.text);
+                JSONNode coordinates = JSON.Parse(webRequest.downloadHandler.text);
                         
-                        float pos = float.Parse(coordinates["prediction"]);
-                        print(pos);
+                float pos = float.Parse(coordinates["prediction"]);
+
 
 
                         //Mudando posição
                         //Quaternion moveAng = foot.transform.eulerAngles - rfoot.transform.eulerAngles;
                         //transform.position += moveAng*Vector3.forward*pos;
-                        transform.position += Vector3.forward * 0.2f * pos;
-                        //print(Time.time - startTime);
-                        while((Time.time - startTime)<0.1){
-                            yield return new WaitForSeconds(0.001f);
-                        }
-                        print(Time.time-startTime);
+                        // rot = new Vector3( 0, (frEulery+rfrEulery)/2, 0);
+
+                transform.position += transform.forward * 0.2f * pos;
+                        //transform.eulerAngles = rot;
+                        // transform.Rotate(0, (frEulery+rfrEulery)/2, 0, Space.World);
+                        // //print(Time.time - startTime);
+                        // Quaternion target = Quaternion.Euler(0, (frEulery+rfrEulery)/2, 0);
+                    // Dampen towards the target rotation
+                        // transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * 5.0f);
+                    //    transform.Rotate( rot,  Space.World);
+                    // var rot2 = transform.localRotation.eulerAngles; //get the angles
+                    // rot2.Set(0f,(frEulery+rfrEulery)/2 , 0f); //set the angle
+                    // transform.localRotation = Quaternion.Euler(rot2);
+                print("angulo_y_ANTES:"+ angulo_y);
+                float angulo_pes= (frEulery+rfrEulery)/2;
+                // Quaternion target  = Quaternion.Euler(0, angulo_pes-angulo_y, 0);
+                // transform.rotation= target;
+                // //     Vector3 to = new Vector3(0,(frEulery+rfrEulery)/2 , 0);
+                                //    transform.eulerAngles = Vector3.Lerp(to2, to, 0);
+                 float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.y, angulo_pes, 5);
+                 transform.eulerAngles = new Vector3(0, angle, 0);
+                angulo_y=angulo_pes;
+                print("angulo_pes"+angulo_pes);
+                print("angulo_y:"+angulo_y);
+                        //  transform.rotation = Quaternion.AngleAxis((frEulery+rfrEulery)/2, Vector3.up);
+                while((Time.time - startTime)<0.1){
+                    yield return new WaitForSeconds(0.001f);
+                }
 
 
                 //         break;
