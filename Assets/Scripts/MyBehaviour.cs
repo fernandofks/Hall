@@ -16,6 +16,7 @@ public class MyBehaviour : MonoBehaviour
 {
     public Transform foot;
     public Transform rfoot;
+    public Transform KATVR;
     static float angulo_y;
 
     void Start()
@@ -76,13 +77,14 @@ public class MyBehaviour : MonoBehaviour
 
                 JSONNode coordinates = JSON.Parse(webRequest.downloadHandler.text);                        
                 float pos = float.Parse(coordinates["prediction"]);
+                print("pos:"+pos);
 
                 // Mudando posição
                 // Quaternion moveAng = foot.transform.eulerAngles - rfoot.transform.eulerAngles;
                 // transform.position += moveAng*Vector3.forward*pos;
                 // rot = new Vector3( 0, (frEulery+rfrEulery)/2, 0);
 
-                transform.position += transform.forward * 0.2f * pos;
+                KATVR.transform.position += transform.forward * 0.2f * pos;
                 // transform.eulerAngles = rot;
                 // transform.Rotate(0, (frEulery+rfrEulery)/2, 0, Space.World);
                 // //print(Time.time - startTime);
@@ -117,9 +119,9 @@ public class MyBehaviour : MonoBehaviour
                 // float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.y, angulo_pes, 0);
                 // transform.eulerAngles = new Vector3(0, angle, 0);
                 // angulo_y=angulo_pes;
-                print("rotacao_atual:" + transform.rotation.eulerAngles );
-                print("angulo_pes"+angulo_pes);
-                print("angulo_pe_esquerdo:"+angulo_pe_esquerdo);
+                // print("rotacao_atual:" + transform.rotation.eulerAngles );
+                // print("angulo_pes"+angulo_pes);
+                // print("angulo_pe_esquerdo:"+angulo_pe_esquerdo);
                 // transform.rotation = Quaternion.AngleAxis((frEulery+rfrEulery)/2, Vector3.up);
                 while((Time.time - startTime)<0.1){
                     yield return new WaitForSeconds(0.001f);
