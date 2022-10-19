@@ -77,7 +77,7 @@ public class MyBehaviour : MonoBehaviour
 
                 JSONNode coordinates = JSON.Parse(webRequest.downloadHandler.text);                        
                 float pos = float.Parse(coordinates["prediction"]);
-                print("pos:"+pos);
+                // print("pos:"+pos);
 
                 // Mudando posição
                 // Quaternion moveAng = foot.transform.eulerAngles - rfoot.transform.eulerAngles;
@@ -95,7 +95,7 @@ public class MyBehaviour : MonoBehaviour
                 // var rot2 = transform.localRotation.eulerAngles; //get the angles
                 // rot2.Set(0f,(frEulery+rfrEulery)/2 , 0f); //set the angle
                 // transform.localRotation = Quaternion.Euler(rot2);
-                print("angulo_y_ANTES:"+ angulo_y);
+                // print("angulo_y_ANTES:"+ angulo_y);
                 // Vector3 angulo_pe_esquerdo = transform.TransformVector(foot.rotation.eulerAngles);
                 // Vector3 angulo_pe_direito  = transform.TransformVector(rfoot.rotation.eulerAngles);
                 // Vector3 angulo_pe_esquerdo =foot.rotation.eulerAngles;
