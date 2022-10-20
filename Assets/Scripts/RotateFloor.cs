@@ -6,24 +6,53 @@ using UnityEngine.UI;
 public class RotateFloor : MonoBehaviour
 {   
     public Text placa;
-    private int waitTime=60;
+    private int waitTime=360;
     private float stop_speed=0;
     private float slow_speed=0.02f;
     private float fast_speed=0.04f;
-    public GameObject target;
     Animator anim;
+    //DON'T HAVE THE GAME OBJECT MOVE RIGHT AWAY, WAIT 10 SECONDS
+    private bool isWait = true;
+    private bool first_time = true;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        StartCoroutine(StartDelay());
         StartCoroutine(ChangeSpeed());
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        // Spin the object around the target at 20 degrees/second.
-        transform.RotateAround(target.transform.position, Vector3.up, 20 * Time.deltaTime);
-    }
+
+     private void Update()
+     {
+         //AFTER 10 SECONDS THE GAME OBJECT STARTS MOVING
+         if (!isWait)
+         {
+             Move();
+         }
+     }
+ 
+     private void Move()
+     {
+            transform.Rotate(0,5,0);
+             StartCoroutine(StartDelay()); // restarts the coroutine
+             StartCoroutine(ChangeSpeed());
+     }
+ 
+     //after 10 seconds, the object moves
+     IEnumerator StartDelay()
+     {
+        if(first_time==true){
+             yield return new WaitForSeconds(60);
+             first_time=false;
+         }
+         isWait = true;//object now waits to move
+         yield return new WaitForSeconds(5);
+         isWait = false; //object is no longer waiting to move
+     }
+ 
+
     IEnumerator ChangeSpeed()
     {   
         //preparo
