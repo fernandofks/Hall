@@ -11,9 +11,11 @@ public class RotateFloor : MonoBehaviour
     private float slow_speed=0.02f;
     private float fast_speed=0.04f;
     Animator anim;
-    //DON'T HAVE THE GAME OBJECT MOVE RIGHT AWAY, WAIT 10 SECONDS
+    //DON'T HAVE THE GAME OBJECT MOVE RIGHT AWAY, WAIT 60 SECONDS
     private bool isWait = true;
     private bool first_time = true;
+    float rotationSpeed = 1f; //The speed we rotate by, set in Start()
+
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class RotateFloor : MonoBehaviour
 
      private void Update()
      {
-         //AFTER 10 SECONDS THE GAME OBJECT STARTS MOVING
+         //AFTER 5 SECONDS THE GAME OBJECT STARTS MOVING
          if (!isWait)
          {
              Move();
@@ -35,9 +37,8 @@ public class RotateFloor : MonoBehaviour
  
      private void Move()
      {
-            transform.Rotate(0,5,0);
-             StartCoroutine(StartDelay()); // restarts the coroutine
-             StartCoroutine(ChangeSpeed());
+            transform.Rotate(0,rotationSpeed * Time.deltaTime,0);
+            StartCoroutine(StartDelay()); // restarts the coroutine
      }
  
      //after 10 seconds, the object moves
@@ -48,7 +49,7 @@ public class RotateFloor : MonoBehaviour
              first_time=false;
          }
          isWait = true;//object now waits to move
-         yield return new WaitForSeconds(5);
+         yield return new WaitForSeconds(0);
          isWait = false; //object is no longer waiting to move
      }
  

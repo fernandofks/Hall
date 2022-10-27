@@ -3,9 +3,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class RecPositions : MonoBehaviour {
-     public string fileName = "walk_data_14_Fernando.txt"; // file pathname
-     public float interval = 0.1f; // save positions each 0.1 second
-     public float tSample = 60; // sampling starts after this time
+     private string fileName = "texte.txt"; // file pathname
+     private float interval = 0.01f; // save positions each 0.05 second
+     private float tSample = 60; // sampling starts after this time
      private List<Vector3> positions;
      private List<Quaternion> rotations;
      private List<Vector3> rpositions;
@@ -44,7 +44,7 @@ public class RecPositions : MonoBehaviour {
          System.IO.File.WriteAllText(fileName, ""); // clear old file, if any
          
          for(int i=0; i<positions.Count; i++){
-            string line = System.String.Format("{0:f2},{1:f2},{2:f2},{3:f2},{4:f2},{5:f2},{6:f2},{7:f2},{8:f2},{9:f2},{10:f2},{11:f2},{12:f2},{13:f2},{14:f2},{15:f2},{16:f2},{17:f2},{18:f2},{19:f2},{20:f2}\r\n", positions[i].x, positions[i].y, positions[i].z, rotations[i].x, rotations[i].y, rotations[i].z, rotations[i].w, rpositions[i].x, rpositions[i].y, rpositions[i].z, rrotations[i].x, rrotations[i].y, rrotations[i].z, rrotations[i].w, cpositions[i].x, cpositions[i].y, cpositions[i].z, crotations[i].x, crotations[i].y, crotations[i].z, crotations[i].w);
+            string line = System.String.Format("{0:f3},{1:f3},{2:f3},{3:f3},{4:f3},{5:f3},{6:f3},{7:f3},{8:f3},{9:f3},{10:f3},{11:f3},{12:f3},{13:f3},{14:f3},{15:f3},{16:f3},{17:f3},{18:f3},{19:f3},{20:f3}\r\n", positions[i].x, positions[i].y, positions[i].z, rotations[i].x, rotations[i].y, rotations[i].z, rotations[i].w, rpositions[i].x, rpositions[i].y, rpositions[i].z, rrotations[i].x, rrotations[i].y, rrotations[i].z, rrotations[i].w, cpositions[i].x, cpositions[i].y, cpositions[i].z, crotations[i].x, crotations[i].y, crotations[i].z, crotations[i].w);
             System.IO.File.AppendAllText(fileName, line); // append to the file
          }
     }
