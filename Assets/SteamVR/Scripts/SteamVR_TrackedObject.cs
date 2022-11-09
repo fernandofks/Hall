@@ -19,18 +19,7 @@ namespace Valve.VR
             Device2,
             Device3,
             Device4,
-            Device5,
-            Device6,
-            Device7,
-            Device8,
-            Device9,
-            Device10,
-            Device11,
-            Device12,
-            Device13,
-            Device14,
-            Device15,
-            Device16
+
         }
 
         public EIndex index;
