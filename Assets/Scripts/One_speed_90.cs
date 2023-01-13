@@ -31,6 +31,8 @@ public class One_speed_90 : MonoBehaviour
         {   float startTime = 0.0f;
             startTime = Time.time; 
             string uri = "http://127.0.0.1:8000/";
+
+
             float fx = foot.transform.localPosition.x;
             float fy = foot.transform.localPosition.y;
             float fz = foot.transform.localPosition.z;
@@ -38,17 +40,17 @@ public class One_speed_90 : MonoBehaviour
             float rfy = rfoot.transform.localPosition.y;
             float rfz = rfoot.transform.localPosition.z;
 
+            float frx= foot.rotation.x;
+            float fry= foot.rotation.y;
+            float frz= foot.rotation.z;
+            float frw = foot.rotation.w;
 
-            float frEulerx = foot.rotation.eulerAngles.x;
-            float frEulery = foot.rotation.eulerAngles.y;
-            float frEulerz = foot.rotation.eulerAngles.z;
-            float rfrEulerx = rfoot.rotation.eulerAngles.x;
-            float rfrEulery = rfoot.rotation.eulerAngles.y;
-            float rfrEulerz = rfoot.rotation.eulerAngles.z;            
+            float rfrx= rfoot.rotation.x;
+            float rfry= rfoot.rotation.y;
+            float rfrz= rfoot.rotation.z;
+            float rfrw= rfoot.rotation.w;
             
-
-
-            string envio = System.String.Format("[{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}]", fx, fy, fz,frEulerx,frEulery,frEulerz, rfx, rfy, rfz,rfrEulerx,rfrEulery,rfrEulerz);  
+            string envio = System.String.Format("[{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13}]", fx, fy, fz,frx, fry, frz, frw, rfx, rfy, rfz,rfrx,rfry,rfrz,rfrw);  
             uri += envio;
             
             using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))    

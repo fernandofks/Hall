@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class RecPositions : MonoBehaviour {
      private string fileName = "a_test_i_0.txt"; // file pathname
-     private float interval = 0.01f; // save positions each 0.05 second
+     private float interval = 0.01f; // save positions each 0.01 second
      private float tSample = 60; // sampling starts after this time
      private List<Vector3> positions;
      private List<Quaternion> rotations;

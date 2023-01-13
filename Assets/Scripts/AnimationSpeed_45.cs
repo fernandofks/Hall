@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AnimationSpeed_45 : MonoBehaviour
 {   
     public Text placa;
-    private int waitTime=20;
+    private int waitTime=30;
     private float stop_speed=0;
     private float slow_speed=0.02f;
     private float fast_speed=0.04f;
@@ -35,32 +35,16 @@ public class AnimationSpeed_45 : MonoBehaviour
         placa.text="parado_um";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado45
+        //parado90
         placa.text="parado_dois";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado90
+        //parado180
         placa.text="parado_tres";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado135
-        placa.text="parado_quatro";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado180
-        placa.text="parado_cinco";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado225
-        placa.text="parado_seis";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
         //parado270
-        placa.text="parado_sete";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado315
-        placa.text="parado_8";
+        placa.text="parado_quatro";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
 
@@ -72,38 +56,18 @@ public class AnimationSpeed_45 : MonoBehaviour
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
-        //devagar45
+        //devagar90
         placa.text="devagar_dois";
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
-        //devagar90
+        //devagar180
         placa.text="devagar_tres";
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
-        //devagar135
-        placa.text="devagar_quatro";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
-        //devagar180
-        placa.text="devagar_cinco";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
-        //devagar225
-        placa.text="devagar_seis";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
         //devagar270
-        placa.text="devagar_sete";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
-        //devagar315
-        placa.text="devagar_oito";
+        placa.text="devagar_quatro";
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
@@ -115,41 +79,20 @@ public class AnimationSpeed_45 : MonoBehaviour
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
-        //rapido45
+        //rapido90
         placa.text="rapido_dois";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
-        //rapido90
+        //rapido180
         placa.text="rapido_tres";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
-        //rapido135
+        //rapido270
         placa.text="rapido_quatro";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
-
-        //rapido180
-        placa.text="rapido_cinco";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
-        //rapido225
-        placa.text="rapido_seis";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
-        //rapido270
-        placa.text="rapido_sete";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
-        //rapido315
-        placa.text="rapido_oito";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
 
         //devagar
         anim.SetFloat("speedMultiplier", slow_speed);
@@ -158,41 +101,22 @@ public class AnimationSpeed_45 : MonoBehaviour
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
-        //devagar45
+        //devagar90
         placa.text="devagar_dois";
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
-        //devagar90
+        //devagar180
         placa.text="devagar_tres";
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
-        //devagar135
+        //devagar270
         placa.text="devagar_quatro";
         placa.color= Color.yellow;
         yield return new WaitForSeconds(waitTime);
 
-        //devagar180
-        placa.text="devagar_cinco";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
-        //devagar225
-        placa.text="devagar_seis";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
-        //devagar270
-        placa.text="devagar_sete";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
-        //devagar315
-        placa.text="devagar_oito";
-        placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
-
+        
         //parado
         anim.SetFloat("speedMultiplier", stop_speed);
 
@@ -200,35 +124,19 @@ public class AnimationSpeed_45 : MonoBehaviour
         placa.text="parado_um";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado45
+        //parado90
         placa.text="parado_dois";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado90
+        //parado180
         placa.text="parado_tres";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado135
+        //parado270
         placa.text="parado_quatro";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado180
-        placa.text="parado_cinco";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado225
-        placa.text="parado_seis";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado270
-        placa.text="parado_sete";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado315
-        placa.text="parado_8";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        
+       
         //rapido
         anim.SetFloat("speedMultiplier", fast_speed);
 
@@ -237,41 +145,20 @@ public class AnimationSpeed_45 : MonoBehaviour
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
-        //rapido45
+        //rapido90
         placa.text="rapido_dois";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
-        //rapido90
+        //rapido180
         placa.text="rapido_tres";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
-        //rapido135
+        //rapido270
         placa.text="rapido_quatro";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
-
-        //rapido180
-        placa.text="rapido_cinco";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
-        //rapido225
-        placa.text="rapido_seis";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
-        //rapido270
-        placa.text="rapido_sete";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
-        //rapido315
-        placa.text="rapido_oito";
-        placa.color=Color.green;
-        yield return new WaitForSeconds(waitTime);
-
 
         //parado
         anim.SetFloat("speedMultiplier", stop_speed);
@@ -280,35 +167,19 @@ public class AnimationSpeed_45 : MonoBehaviour
         placa.text="parado_um";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado45
+        //parado90
         placa.text="parado_dois";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado90
+        //parado180
         placa.text="parado_tres";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado135
+        //parado270
         placa.text="parado_quatro";
         placa.color= Color.red;
         yield return new WaitForSeconds(waitTime);
-        //parado180
-        placa.text="parado_cinco";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado225
-        placa.text="parado_seis";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado270
-        placa.text="parado_sete";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-        //parado315
-        placa.text="parado_8";
-        placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
-
+        
         placa.text="ACABOU";
         placa.color= Color.blue;
 
