@@ -73,13 +73,13 @@ public class One_speed_90 : MonoBehaviour
                     KATVR.transform.position += transform.forward * 0.2f;
                 }
                 else if(pos==2){
-                    KATVR.transform.position += transform.right * 0.2f;
+                    KATVR.transform.position -= transform.right * 0.2f;
                 }
                 else if(pos==3){
                     KATVR.transform.position -= transform.forward * 0.2f;
                 }
                 else if(pos==4){
-                    KATVR.transform.position -= transform.right * 0.2f;
+                    KATVR.transform.position += transform.right * 0.2f;
                 }
 
                 while((Time.time - startTime)<0.1){
