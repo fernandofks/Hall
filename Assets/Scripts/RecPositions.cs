@@ -3,8 +3,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class RecPositions : MonoBehaviour {
-     private string fileName = "teste_rotacao.txt"; // file pathname
-     private float interval = 0.01f; // save positions each 0.01 second
+     private string fileName = "f_s_90_1.txt"; // file pathname
+     private float interval = 0.1f; // save positions each 0.1 second
      private float tSample = 60; // sampling starts after this time
      private List<Vector3> positions;
      private List<Quaternion> rotations;
