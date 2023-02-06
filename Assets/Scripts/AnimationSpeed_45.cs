@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AnimationSpeed_45 : MonoBehaviour
 {   
     public Text placa;
-    private int waitTime=240;
+    private int waitTime=120;
     private float stop_speed=0;
     private float slow_speed=0.02f;
     private float fast_speed=0.04f;
@@ -46,18 +46,37 @@ public class AnimationSpeed_45 : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         //rapido0
-        placa.text="esquerda";
+        placa.text="d_e";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
         //rapido90
+        placa.text="esquerda";
+        placa.color=Color.red;
+        yield return new WaitForSeconds(waitTime);
+
+        //rapido180
+        placa.text="d_e";
+        placa.color=Color.blue;
+        yield return new WaitForSeconds(waitTime);
+
+        //rapido90
         placa.text="trás";
+        placa.color=Color.yellow;
+        yield return new WaitForSeconds(waitTime);
+
+        //rapido180
+        placa.text="d_e";
+        placa.color=Color.red;
+        yield return new WaitForSeconds(waitTime);
+        //rapido90
+        placa.text="direita";
         placa.color=Color.green;
         yield return new WaitForSeconds(waitTime);
 
         //rapido180
-        placa.text="direita";
-        placa.color=Color.green;
+        placa.text="d_e";
+        placa.color=Color.red;
         yield return new WaitForSeconds(waitTime);
 
         placa.text="ACABOU";
