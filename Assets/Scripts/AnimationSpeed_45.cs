@@ -34,16 +34,16 @@ public class AnimationSpeed_45 : MonoBehaviour
         //parado0
         placa.text="parado_um";
         placa.color= Color.red;
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(240);
 
 
         //devagar
         anim.SetFloat("speedMultiplier", slow_speed);
         
         //devagar0
-        placa.text="fente";
+        placa.text="frente";
         placa.color= Color.yellow;
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(240);
 
         //rapido0
         placa.text="d_e";
